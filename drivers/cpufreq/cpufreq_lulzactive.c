@@ -324,10 +324,6 @@ static void cpufreq_lulzactive_timer(unsigned long data)
 		      (int) data, jiffies - pcpu->cpu_timer.expires);
 #endif
 
-	delta_idle = (unsigned int) cputime64_sub(now_idle, time_in_idle);
-	delta_time = (unsigned int) cputime64_sub(pcpu->timer_run_time,
-						  idle_exit_time);
-
 	/*
 	 * If timer ran less than 1ms after short-term sample started, retry.
 	 */
