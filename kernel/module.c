@@ -2756,7 +2756,7 @@ static int check_modinfo(struct module *mod, struct load_info *info)
 	int err;
 
 	/* This is allowed: modprobe --force will invalidate it. */
-	if (!modmagic || !strncmp("exfat_", mod->name,6)) {
+	if (!modmagic || !strncmp("exfat_", mod->name, 6)) {
 		err = try_to_force_load(mod, "bad vermagic");
 		if (err)
 			return err;
