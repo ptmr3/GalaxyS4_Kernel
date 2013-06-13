@@ -43,16 +43,10 @@
 #include <mach/sec_debug.h>
 #endif
 
-#ifdef CONFIG_CPU_OVERCLOCK
-#define OVERCLOCK_EXTRA_FREQS	7
-#else
-#define OVERCLOCK_EXTRA_FREQS	0
-#endif
-
 #ifdef CONFIG_LOW_CPUCLOCKS
-#define FREQ_TABLE_SIZE		(39 + OVERCLOCK_EXTRA_FREQS)
+#define FREQ_TABLE_SIZE		39
 #else
-#define FREQ_TABLE_SIZE		(35 + OVERCLOCK_EXTRA_FREQS)
+#define FREQ_TABLE_SIZE		35
 #endif
 
 /* MUX source selects. */
