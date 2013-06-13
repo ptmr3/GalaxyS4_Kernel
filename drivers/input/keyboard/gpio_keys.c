@@ -435,12 +435,10 @@ static void gpio_keys_gpio_work_func(struct work_struct *work)
 {
 	struct gpio_button_data *bdata =
 		container_of(work, struct gpio_button_data, work);
-#ifdef KEY_BOOSTER
-	const struct gpio_keys_button *button = bdata->button;
-	int state = (gpio_get_value_cansleep(button->gpio) ? 1 : 0) ^ button->active_low;
-#endif
+const struct gpio_keys_button *button = bdata->button;
+int state = (gpio_get_value_cansleep(button->gpio) ? 1 : 0) ^ button->active_low;
 	gpio_keys_gpio_report_event(bdata);
-#ifdef KEY_BOOSTER
+	#ifdef KEY_BOOSTER
 	if (button->code == KEY_HOME)
 		gpio_key_set_dvfs_lock(bdata, !!state);
 #endif
