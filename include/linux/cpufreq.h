@@ -25,7 +25,6 @@
 
 extern int GLOBALKT_MIN_FREQ_LIMIT;
 extern int GLOBALKT_MAX_FREQ_LIMIT;
-
 #define FREQ_TABLE_SIZE		42
 #define FREQ_TABLE_SIZE_OFFSET	4
 #define FREQ_STEPS		22
@@ -126,7 +125,6 @@ struct cpufreq_policy {
 	struct kobject		kobj;
 	struct completion	kobj_unregister;
 };
-extern struct cpufreq_policy trmlpolicy[10];
 
 #define CPUFREQ_ADJUST		(0)
 #define CPUFREQ_INCOMPATIBLE	(1)
